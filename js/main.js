@@ -1,7 +1,11 @@
 $(window).scroll(function(){
 	var $top = $(this).scrollTop(); //return scroll value
 	
-	$("img.section-img").delay(1000).css("transform", 'translate(0px,-'+$top*0.015+'%)');
+	window.setTimeout(function(){
+		$("img.section-img").css("transform", 'translate(0px,-'+$top*0.01+'%)');
+	}, 250);
+
+	//$("img.section-img").delay(1000).css("transform", 'translate(0px,-'+$top*0.015+'%)');
 
 	
 	//auto changing active nav class
@@ -42,30 +46,81 @@ $(window).scroll(function(){
 
 
 $(document).ready(function(){
-  	/*var typed = new Typed('#typed', {
+  	var typed = new Typed('#typed', {
     	strings: ['_an Undergraduate Student', '_a Frontend Developer', '_an Engineer at Heart'],
     	typeSpeed: 80,
     	backSpeed: 40,
     	smartBackspace: true, // this is a default
     	loop: true,
     	showCursor: false
-  	});*/
-
-
-  	//overlay
-  	let $tableRightEle = $('.table-right-element'),
-  		$overlay = $('.overlay');
-
-	$('.sidebar-header, .overlay').on('click', function () {
-		if ($tableRightEle.hasClass('hidden')) {
-			$tableRightEle.removeClass('hidden');
-			$overlay.addClass('active');
+	  });
+	  
+	if (window.matchMedia('(max-width: 767px)').matches) {
+		//code for mobile screens
+		let $topBar = $('.top-bar');
+		if ($topBar.hasClass('hidden')) {
+			$topBar.removeClass('hidden');
 		}
-		else {
+		let $sidebar = $('#sidebar'),
+		$overlay = $('.overlay');
+
+		$('.sidebar-header, .overlay').on('click', function () {
+			if ($sidebar.hasClass('hidden')) {
+				$sidebar.removeClass('hidden');
+				$overlay.addClass('active');
+			}
+			else {
+				$sidebar.addClass('hidden');
+				$overlay.removeClass('active');
+			}
+		});
+	} else
+	if (window.matchMedia('(min-width: 768px)').matches 
+	&& window.matchMedia('(max-width: 991px)').matches) {
+		//code for tablet screens smaller than 768px
+
+		let $tableRightEle = $('.table-right-element'),
+		  $overlay = $('.overlay'), 
+		  $sidebar = $('#sidebar');
+
+		if ($sidebar.hasClass('hidden')) {
+			$sidebar.removeClass('hidden');
 			$tableRightEle.addClass('hidden');
-			$overlay.removeClass('active');
 		}
-	});
+		$('.sidebar-header, .overlay').on('click', function () {
+			if ($tableRightEle.hasClass('hidden')) {
+				$tableRightEle.removeClass('hidden');
+				$overlay.addClass('active');
+			}
+			else {
+				$tableRightEle.addClass('hidden');
+				$overlay.removeClass('active');
+			}
+		});
+	} else 
+	if (window.matchMedia('(min-width: 992px)').matches) {
+		//code for desktop screens and up
+		let $tableRightEle = $('.table-right-element'),
+		  $overlay = $('.overlay'), 
+		  $sidebar = $('#sidebar');
+
+		if ($sidebar.hasClass('hidden')) {
+			$sidebar.removeClass('hidden');
+			$tableRightEle.addClass('hidden');
+		}
+		$('.sidebar-header, .overlay').on('click', function () {
+			if ($tableRightEle.hasClass('hidden')) {
+				$tableRightEle.removeClass('hidden');
+				$overlay.addClass('active');
+			}
+			else {
+				$tableRightEle.addClass('hidden');
+				$overlay.removeClass('active');
+			}
+		});
+	}
+
+	
 
 	
 	//slide div for more details.

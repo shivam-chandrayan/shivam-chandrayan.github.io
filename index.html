@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -11,6 +11,9 @@
 	<!-- Fontawesome CSS -->
 	<link rel="stylesheet" href="css/all.min.css">
 	<link rel="stylesheet" href="css/solid.min.css">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
 
 	<title>Shivam Kumar</title>
 </head>
@@ -18,9 +21,20 @@
 	
 	<div class="wrapper">
 
-		<!-- Sidebar -->
-		<nav id="sidebar">
+		<!-- dark overlay element -->
+		<div class="overlay"></div>
 
+		<!-- TOPBAR - only shown on mobile devices -->
+		<div class="top-bar hidden">
+			<div class="sidebar-header">
+				<i class="fas fa-bars fa-2x"></i>
+			</div>
+		</div>
+		
+		
+		<!-- Sidebar -->
+		<nav id="sidebar" class="hidden">
+			
 			<div class="sidebar-header">
 				<i class="fas fa-bars fa-2x"></i>
 			</div>
@@ -30,7 +44,7 @@
 					<td class="table-left-element nav-icon nav-item-active" id="nav-home">
 						<a href="#"><i class="fas fa-home"></i></a>
 					</td>
-					<td class="table-right-element  hidden">
+					<td class="table-right-element">
 						<a href="#" class="">Home</a>
 					</td>
 				</tr>
@@ -38,7 +52,7 @@
 					<td class="table-left-element nav-icon" id="nav-about">
 						<a href="#about-me"><i class="fas fa-smile"></i></a>
 					</td>
-					<td class="table-right-element hidden">
+					<td class="table-right-element">
 						<a href="#about-me" class="">About me</a>
 					</td>
 				</tr>
@@ -46,7 +60,7 @@
 					<td class="table-left-element nav-icon" id="nav-projects">
 						<a href="#projects"><i class="fas fa-project-diagram"></i></a>
 					</td>
-					<td class="table-right-element hidden">
+					<td class="table-right-element">
 						<a href="#projects" class="">Project hub</i></a>
 					</td>
 				</tr>
@@ -54,7 +68,7 @@
 					<td class="table-left-element nav-icon" id="nav-services">
 						<a href="#services"><i class="fas fa-toolbox"></i></a>
 					</td>
-					<td class="table-right-element hidden">
+					<td class="table-right-element">
 						<a href="#services" class="">Services offered</a>
 					</td>
 				</tr>
@@ -62,7 +76,7 @@
 					<td class="table-left-element nav-icon" id="nav-contact">
 						<a href="#footer"><i class="fas fa-mail-bulk"></i></a>
 					</td>
-					<td class="table-right-element hidden">
+					<td class="table-right-element">
 						<a href="#footer" class="">Contact me</a>
 					</td>
 				</tr>
@@ -71,26 +85,34 @@
 			<table class="table-hover">
 				<tr>
 					<td class="table-left-element nav-icon">
-						<a href="#"><i class="fab fa-facebook-square"></i></a>
+						<a href="https://www.facebook.com/Shivam.Chandrayan007" target="_blank"><i class="fab fa-facebook-square"></i></a>
 					</td>
-					<td class="table-right-element hidden">
-						<a href="#">Facebook</a>
-					</td>
-				</tr>
-				<tr>
-					<td class="table-left-element nav-icon">
-						<a href="#"><i class="fab fa-linkedin"></i></a>
-					</td>
-					<td class="table-right-element hidden">
-						<a href="#">Linkedin</a>
+					<td class="table-right-element">
+						<a href="https://www.facebook.com/Shivam.Chandrayan007" target="_blank">Facebook</a>
 					</td>
 				</tr>
 				<tr>
 					<td class="table-left-element nav-icon">
-						<a href="#"><i class="fab fa-codepen"></i></a>
+						<a href="https://www.linkedin.com/in/shivam-kumar-254b24142/" target="_blank"><i class="fab fa-linkedin"></i></a>
 					</td>
-					<td class="table-right-element hidden">
-						<a href="#">Codepen</a>	
+					<td class="table-right-element">
+						<a href="https://www.linkedin.com/in/shivam-kumar-254b24142/" target="_blank">Linkedin</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="table-left-element nav-icon">
+						<a href="https://codepen.io/Shivam_Kumar/" target="_blank"><i class="fab fa-codepen"></i></a>
+					</td>
+					<td class="table-right-element">
+						<a href="https://codepen.io/Shivam_Kumar/" target="_blank">Codepen</a>	
+					</td>
+				</tr>
+				<tr>
+					<td class="table-left-element nav-icon">
+						<a href="https://github.com/shivam-chandrayan" target="_blank"><i class="fab fa-github"></i></a>
+					</td>
+					<td class="table-right-element">
+						<a href="https://github.com/shivam-chandrayan" target="_blank">Github</a>	
 					</td>
 				</tr>
 			</table>
@@ -98,64 +120,69 @@
 		
 		<!-- Page Content -->
 		<div id="content">
-
-			<!-- dark overlay element -->
-			<div class="overlay"></div>
-
-			<button class="" id="top-contact-btn"><a href="#footer"> Contact Me</a></button>
-
-
+			<div class="row">
+				<div class="col-md-12">
+					<button class="d-none d-md-block" id="header-contact-btn"><a href="#footer"> Contact Me</a></button>
+				</div>
+			</div>
+			
 			<!-- main header section -->
+			<div class="d-md-none" id="top-padding"></div>
 			<div class="row main-header" id="home-section">
-				<div class="col-3"></div>
-				<div class="col-9">
-					<h3>Hello there,</h3>
-					<h1 strong>I'm Shivam Kumar</h1>
+				<div class="col-lg-3 col-md-2"></div>
+				<div class="col-lg-9 col-md-10">
+					<h3 class="header-hello">Hello there,</h3>
+					<h1 strong class="header-name">I'm Shivam Kumar</h1>
 					<div id="toggle-text"><h3>_</h3><h3 id="typed" ></h3></div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-3"></div>
-				<div class="col-3">
-					<hr size="20" color="#52E925">
-				</div>
+				<div class="col-2"></div>
 				<div class="col-5">
-					<br><br>
+					<hr color="#52E925" class="d-lg-none">
+				</div>
+				<div class="col-5"></div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3 col-md-1"></div>
+				<div class="col-lg-3 col-md-4">
+					<hr color="#52E925" class="d-none d-lg-block">
+				</div>
+				<div class="col-lg-5 col-md-7">
 					<p>
 						Do you want to build up your brand? Want to attract more customers?
-						<br>Then you need a website so that you don't miss out on those awesome opportunities.
+						Then you need a website so that you don't miss out on those awesome opportunities.
 					</p>
+					<button class="d-md-none" id="header-contact-btn"><a href="#footer"> Contact Me</a></button>
 				</div>
-				<div class="col-1"></div>
+				<div class="col-lg-1 col-md-0"></div>
 			</div>
 
 			<!-- Below the fold elements -->
 			<!-- ABOUT ME -->
 			<div class="row new-section" id="about-section">
-				<div class="col-2"></div>
-				<div class="col-4">
+				<div class="col-lg-2 col-md-1"></div>
+				<div class="col-lg-4 col-md-5">
 					<img src="img/about-me1.jpeg" class="section-img-left section-img" id="about-me">
 				</div>
-				<div class="col-4">
-					<h2 class="parallaxHeading section-heading-left">A B O U T <br> M E</h2>
+				<div class="col-lg-4 col-md-6">
+					<h2 class="section-heading-left">A B O U T <br> M E</h2>
 					<div class="section-desc-left">
 						<hr align="left"><br>
-						<p class="parallaxDesc">
+						<p class="">
 							I'm an undergraduate student persuing an engineering degree in Instrumentation and control. I'm passionate about robotics and I love coding. Web development, for me, is a childhood hobby.
 						</p>
-						<button class="section-btn" id="learnMore-about">Learn more</button>	
+						<button class="section-btn" id="learnMore-about">Learn more</button>
 					</div>
-					
 				</div>
-				<div class="col-2"></div>	
+				<div class="col-lg-2 col-md-0"></div>	
 			</div>
 
 			<!-- Sliding pane with more details -->
-			<div class="slide-div hidden" id="slide-div-about">
+			<div class="slide-div hidden" id="slide-div-about" background>
 				<div class="row slide-div-content">
-					<div class="col-1">
-					</div>
-					<div class="col-5">
+					<div class="col-md-1"></div>
+					<div class="col-md-5">
 						<p class="">Currently I'm in 3<sup>rd</sup> year of Engineering degree course in Haldia Institute of technology. Although my major is Control engineering but I've been making websites since my high school. That was just for fun, nowadays I'm serious about web development. Following are few tools which I've learned in past few years.</p>
 						<div class="devicon-icons">
 							<table>
@@ -189,45 +216,45 @@
 							</table>
 						</div>
 					</div>
-					<div class="col-6">
-						<img src="img/man-in-a-frame.jpeg" class="rounded mx-auto d-block" width="500px">
+					<div class="col-md-6">
+						<img src="img/man-in-a-frame.jpeg" class="hidden rounded mx-auto d-block slide-div-img" width="500px">
 					</div>	
 				</div>
 			</div>
 
 			<!-- Projects -->
 			<div class="row new-section" id="project-section">
-				<div class="col-2"></div>
-				<div class="col-4">
-					<h2 class="parallaxHeading section-heading-right">P R O J E C T S<br> H U B</h2><br>
+				<div class="col-lg-2 col-md-1"></div>
+				<div class="col-lg-4 col-md-6">
+					<h2 class=" section-heading-right">P R O J E C T S<br> H U B</h2><br>
 					<div class="section-desc-right">
 						<hr align="left"><br>
-						<p class="parallaxDesc">
+						<p class="">
 							I love to work on projects which involves solving real world problems. But once in a while I do some projects just to test my skills.
 						</p>
 						<button class="section-btn" id="learnMore-projects">Browse projects</button>	
 					</div>
 				</div>
-				<div class="col-4">
+				<div class="col-lg-4 col-md-5">
 					<img src="img/project2.jpg" class="section-img-right section-img" id="projects">
 				</div>
-				<div class="col-2"></div>
+				<div class="col-lg-2 col-md-0"></div>
 			</div>
 
 			<!-- Sliding pane with more details -->
 			<div class="slide-div hidden" id="slide-div-projects">
 				<div class="row slide-div-content">
-					<div class="col-1"></div>
-					<div class="col-5">
-						<img src="img/project-desc.jpeg" class="rounded mx-auto d-block" width="500px">
+					<div class="col-md-1"></div>
+					<div class="col-md-5">
+						<img src="img/project-desc.jpeg" class="rounded mx-auto d-block slide-div-img" width="500px">
 					</div>
-					<div class="col-5">
+					<div class="col-md-5">
 						<p class="">
 							I'm in love with hobby flying. It is such a field where aeronotics and control engineering go hand in hand. Being an student form Instrumentation and control engineering department, I'm naturally attracted towards it. Along with my two other classmates, we've started a flying club and it already has more than 20 members!<br><br>
 							Apart form that, I do projects related to frontend web development. Below are some of the projects I've done, check it out!
 						</p>
 					</div>
-					<div class="col-1">
+					<div class="col-md-1">
 					</div>	
 				</div>
 			</div>
@@ -235,30 +262,30 @@
 
 			<!-- SERVICES -->
 			<div class="row new-section" id="service-section">
-				<div class="col-2"></div>
-				<div class="col-4">
+				<div class="col-lg-2 col-md-1"></div>
+				<div class="col-lg-4 col-md-5">
 					<img src="img/service1.jpeg" class="section-img-left section-img"  id="services">
 				</div>
-				<div class="col-4">
-					<h2 class="parallaxHeading section-heading-left">S E R V I C E S<br> O F F E R E D</h2><br>
+				<div class="col-lg-4 col-md-5">
+					<h2 class=" section-heading-left">S E R V I C E S<br> O F F E R E D</h2><br>
 					<div class="section-desc-left">
 						<hr align="left"><br>
-						<p class="parallaxDesc">
+						<p class="">
 							I'm a forntend developer. I have the power to make your website look something which people love. Let's see what I have to offer.
 						</p>
 						<button class="section-btn" id="learnMore-services">See the deals</button>
 					</div>
 					
 				</div>
-				<div class="col-2"></div>	
+				<div class="col-lg-2 col-md-1"></div>	
 			</div>
 
 			<!-- Sliding pane with more details -->
 			<div class="slide-div hidden" id="slide-div-services">
 				<div class="row slide-div-content">
-					<div class="col-1">
+					<div class="col-md-1">
 					</div>
-					<div class="col-5">
+					<div class="col-md-5">
 						<p class="">
 							So, you are in a need of website?<br><br>
 							Alright! relax, you've come to the right person.<br><br>
@@ -267,8 +294,8 @@
 							I charge based on projects, not on how much hours I've worked.
 						</p>
 					</div>
-					<div class="col-6">
-						<img src="img/service-desc.jpg" class="rounded mx-auto d-block" width="500px">
+					<div class="col-md-6">
+						<img src="img/service-desc.jpg" class="rounded mx-auto d-block slide-div-img">
 					</div>	
 				</div>
 			</div>
@@ -278,21 +305,20 @@
 	</div><!--page content end-->
 
 
-
-
 	<footer id="footer">
 		<div class="row">
 			<div class="col-1"></div>
 			<div class="col-10 contact-link">
 				<h4>Let's build something great together!</h4>
 				<h5>Get in touch and share your ideas</h5><br><br>
-				<a href=""><i class="fab fa-facebook-square fa-7x"></i></a>
-				<a href=""><i class="fab fa-linkedin fa-7x"></i></a>
+				<a href="https://www.facebook.com/Shivam.Chandrayan007" target="_blank"><i class="fab fa-facebook-square fa-7x footer-icon"></i></a>
+				<a href="https://www.linkedin.com/in/shivam-kumar-254b24142/" target="_blank"><i class="fab fa-linkedin fa-7x footer-icon"></i></a>
 				<p>messages works great.</p>
 				<br><br><br>
 			</div>
 			<div class="col-1"></div>
 		</div>
+		<p id="copyright">copyright © Shivam Kumar 2018</p>
 	</footer>
 
 
